@@ -151,7 +151,7 @@ export function RequestEarlyTerminationDialog({ open, onClose, rentalDetails }: 
                 <Label htmlFor="reason">Reason for Early Termination *</Label>
                 <div className="grid grid-cols-2 gap-3 mt-2">
                   {terminationReasons.map((option) => (
-                    <div key={option.id} className="flex items-center space-x-2">
+                    <div key={option.id} className="flex items-center space-x-2 mt-3">
                       <Checkbox
                         id={option.id}
                         checked={reason === option.id}
@@ -178,7 +178,7 @@ export function RequestEarlyTerminationDialog({ open, onClose, rentalDetails }: 
                 <Input
                   type="date"
                   id="moveOutDate"
-                  className="mt-1"
+                  className="mt-4"
                   value={moveOutDate}
                   onChange={(e) => setMoveOutDate(e.target.value)}
                   min={new Date().toISOString().split('T')[0]}
