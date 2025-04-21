@@ -64,20 +64,20 @@ export function Header() {
           {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
         </Button>
         
-        <Button variant="ghost" size="icon" className="relative text-muted-foreground hover:text-foreground">
+        {/* <Button variant="ghost" size="icon" className="relative text-muted-foreground hover:text-foreground">
           <Bell className="h-5 w-5" />
           <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-destructive text-[10px] text-destructive-foreground flex items-center justify-center">
             2
           </span>
-        </Button>
+        </Button> */}
         
-        <Button variant="ghost" size="icon" className="relative text-muted-foreground hover:text-foreground">
+        {/* <Button variant="ghost" size="icon" className="relative text-muted-foreground hover:text-foreground">
           <MessageSquare className="h-5 w-5" />
           <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-destructive text-[10px] text-destructive-foreground flex items-center justify-center">
             4
           </span>
         </Button>
-        
+         */}
         <div className="border-l border-border h-8 mx-2"></div>
         
         <DropdownMenu>
@@ -100,15 +100,12 @@ export function Header() {
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            {/* <DropdownMenuItem>
               <User className="mr-2 h-4 w-4" />
               <span>Profile</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Bell className="mr-2 h-4 w-4" />
-              <span>Notifications</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
+            </DropdownMenuItem> */}
+           
+            {/* <DropdownMenuItem>
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 className="mr-2 h-4 w-4" 
@@ -123,7 +120,7 @@ export function Header() {
                 <circle cx="12" cy="12" r="3" />
               </svg>
               <span>Settings</span>
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleLogout} className="text-destructive focus:text-destructive">
               <svg

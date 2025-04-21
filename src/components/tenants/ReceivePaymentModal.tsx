@@ -84,7 +84,7 @@ export function ReceivePaymentModal({ open, onClose, monthsDue, onSubmit, modalT
 
   return (
     <Dialog open={open} onOpenChange={v => !v && onClose()}>
-      <DialogContent className="max-w-5xl">
+      <DialogContent className="max-w-2xl">
         <DialogHeader>
           <DialogTitle>
             {modalType === "due" ? "Receive Current Rent Payment" : "Receive Advance Payment"}
@@ -217,18 +217,18 @@ export function ReceivePaymentModal({ open, onClose, monthsDue, onSubmit, modalT
 
           <div className="rounded-lg bg-gray-50 p-4">
             <div className="space-y-2">
-              <div className="flex justify-between text-sm text-gray-900">
+              <div className="flex justify-between text-sm">
                 <span>Base Amount ({selectedMonths.length} months)</span>
                 <span>{formatCurrency(selectedMonths.length * 2500)}</span>
               </div>
               {additionalFees.map((fee, index) => (
-                <div key={index} className="flex justify-between text-sm ">
+                <div key={index} className="flex justify-between text-sm">
                   <span>{fee.type}</span>
                   <span>{formatCurrency(fee.amount)}</span>
                 </div>
               ))}
               <div className="border-t pt-2 mt-2">
-                <div className="flex justify-between font-medium text-gray-900">
+                <div className="flex justify-between font-medium">
                   <span>Total Amount</span>
                   <span className="text-lg">{formatCurrency(calculateTotalAmount())}</span>
                 </div>

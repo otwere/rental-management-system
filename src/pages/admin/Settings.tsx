@@ -36,7 +36,7 @@ export default function AdminSettings() {
                 <div className="grid gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="company-name">Company Name</Label>
-                    <Input id="company-name" placeholder="Estate Nexus" />
+                    <Input id="company-name" placeholder="Rental  Portal" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="contact-email">Contact Email</Label>

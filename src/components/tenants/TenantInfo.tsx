@@ -18,7 +18,8 @@ interface TenantInfoProps {
       phone: string;
     };
     occupants?: number;
-   
+    pets?: boolean;
+    petDetails?: string;
   };
 }
 
@@ -85,7 +86,12 @@ export function TenantInfo({ tenant }: TenantInfoProps) {
               <p className="font-medium">{tenant.occupants}</p>
             </div>
           )}
-          
+          {tenant.pets && (
+            <div className="space-y-1">
+              <p className="text-sm text-muted-foreground">Pets</p>
+              <p className="font-medium">{tenant.petDetails || 'Yes'}</p>
+            </div>
+          )}
         </div>
       </CardContent>
     </Card>

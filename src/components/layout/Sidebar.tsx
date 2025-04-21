@@ -173,7 +173,7 @@ export function Sidebar() {
         collapsed ? "justify-center" : "justify-between"
       )}>
         {!collapsed && (
-          <h2 className="text-xl font-bold text-gradient">Estate Nexus</h2>
+          <h2 className="text-xl font-bold text-gradient">Rental  Portal</h2>
         )}
         {collapsed && (
           <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center">

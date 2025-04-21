@@ -59,7 +59,7 @@ export function StatementGenerator({ open, onClose, statement }: StatementGenera
 
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
-      <DialogContent className="max-w-5xl max-h-[100vh] overflow-hidden flex flex-col">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <FileText className="h-5 w-5" />
@@ -77,7 +77,7 @@ export function StatementGenerator({ open, onClose, statement }: StatementGenera
             </div>
             <div className="text-right">
               <p className="font-medium">Period: {statement.period.from} to {statement.period.to}</p>
-              <p className="text-sm text-muted-foreground">Due Date : {statement.dueDate}</p>
+              <p className="text-sm text-muted-foreground">Due Date: {statement.dueDate}</p>
             </div>
           </div>
 
@@ -87,13 +87,13 @@ export function StatementGenerator({ open, onClose, statement }: StatementGenera
               <h3 className="font-semibold mb-2">Tenant Information</h3>
               <p>{statement.tenantName}</p>
               <p className="text-sm text-muted-foreground">{statement.tenantEmail}</p>
-              <p className="text-sm text-muted-foreground">Unit : {statement.unit}</p>
+              <p className="text-sm text-muted-foreground">Unit: {statement.unit}</p>
             </div>
             <div className="text-right">
               <h3 className="font-semibold mb-2">Statement Summary</h3>
-              <p>Total Charges : KES {formatAmount(totalCharges)}</p>
-              <p>Total Payments : KES {formatAmount(totalPayments)}</p>
-              <p className="font-bold mt-2">Balance Due : KES {formatAmount(statement.balance)}</p>
+              <p>Total Charges: ${formatAmount(totalCharges)}</p>
+              <p>Total Payments: ${formatAmount(totalPayments)}</p>
+              <p className="font-bold mt-2">Balance Due: ${formatAmount(statement.balance)}</p>
             </div>
           </div>
 
@@ -117,7 +117,7 @@ export function StatementGenerator({ open, onClose, statement }: StatementGenera
                   ))}
                   <tr className="border-t bg-muted">
                     <td className="px-4 py-2 font-semibold">Total Charges</td>
-                    <td className="px-4 py-2 text-right font-semibold">KES {formatAmount(totalCharges)}</td>
+                    <td className="px-4 py-2 text-right font-semibold">${formatAmount(totalCharges)}</td>
                   </tr>
                 </tbody>
               </table>
@@ -141,12 +141,12 @@ export function StatementGenerator({ open, onClose, statement }: StatementGenera
                     <tr key={index} className="border-t">
                       <td className="px-4 py-2">{payment.date}</td>
                       <td className="px-4 py-2">{payment.reference || '-'}</td>
-                      <td className="px-4 py-2 text-right">KES {formatAmount(payment.amount)}</td>
+                      <td className="px-4 py-2 text-right">${formatAmount(payment.amount)}</td>
                     </tr>
                   ))}
                   <tr className="border-t bg-muted">
                     <td colSpan={2} className="px-4 py-2 font-semibold">Total Payments</td>
-                    <td className="px-4 py-2 text-right font-semibold">KES {formatAmount(totalPayments)}</td>
+                    <td className="px-4 py-2 text-right font-semibold">${formatAmount(totalPayments)}</td>
                   </tr>
                 </tbody>
               </table>
@@ -156,9 +156,9 @@ export function StatementGenerator({ open, onClose, statement }: StatementGenera
           {/* Balance */}
           <div className="border-t pt-4">
             <div className="flex justify-between items-center text-lg">
-              <span className="font-semibold">Current Balance :</span>
+              <span className="font-semibold">Current Balance:</span>
               <span className={statement.balance > 0 ? "text-red-600 font-bold" : "text-green-600 font-bold"}>
-                KES {formatAmount(statement.balance)}
+                ${formatAmount(statement.balance)}
               </span>
             </div>
           </div>

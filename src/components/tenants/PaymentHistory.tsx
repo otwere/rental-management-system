@@ -58,7 +58,7 @@ export function PaymentHistory({ payments, monthsDue = [], monthsAdvance, onRece
     const base = skip.length
       ? new Date(skip[skip.length - 1] + "-01")
       : today;
-    let d = new Date(base);
+    const d = new Date(base);
     if (skip.length) d.setMonth(d.getMonth() + 1);
     for (let i = 0; i < num; i++) {
       months.push(`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2, "0")}`);
@@ -81,8 +81,8 @@ export function PaymentHistory({ payments, monthsDue = [], monthsAdvance, onRece
     return {
       id: payment.id,
       date: payment.date,
-      tenantName: "Mercy Mayra", // This would come from props in a real app
-      tenantEmail: "Simba@example.com", // This would come from props in a real app
+      tenantName: "John Doe", // This would come from props in a real app
+      tenantEmail: "john@example.com", // This would come from props in a real app
       amount: payment.amount,
       paymentType: payment.paymentMode || "Cash",
       monthsPaid: typeof payment.monthsPaid === "string" 
@@ -101,37 +101,37 @@ export function PaymentHistory({ payments, monthsDue = [], monthsAdvance, onRece
     <div>
       <Card>
         <CardHeader>
-          <CardTitle className="text-xl">Payment History</CardTitle>
+          <CardTitle>Payment History</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="mb-6 grid gap-4 md:grid-cols-4">
             <div className="rounded-lg border p-3">
               <div className="text-sm text-muted-foreground">Total Payments</div>
-              <div className="mt-1 text-xl font-bold">
+              <div className="mt-1 text-2xl font-bold">
                 {formatCurrency(payments.reduce((sum: number, p: any) => sum + p.amount, 0))}
               </div>
             </div>
             <div className="rounded-lg border p-3">
               <div className="text-sm text-muted-foreground">Outstanding Balance</div>
-              <div className="mt-1 text-xl font-bold text-red-600">
+              <div className="mt-1 text-2xl font-bold text-red-600">
                 {formatCurrency(payments.reduce((sum: number, p: any) => sum + (p.balance || 0), 0))}
               </div>
             </div>
             <div className="rounded-lg border p-3">
               <div className="text-sm text-muted-foreground">Last Payment</div>
-              <div className="mt-1 text-xl font-bold">
+              <div className="mt-1 text-2xl font-bold">
                 {payments[0]?.date || 'N/A'}
               </div>
             </div>
             <div className="rounded-lg border p-3">
-              <div className="text-sm text-muted-foreground ml-44">Payment Status</div>
+              <div className="text-sm text-muted-foreground">Payment Status</div>
               <div className="mt-1">
                 {monthsDue.length > 0 ? (
                   <span className="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-sm font-medium text-red-800">
                     {monthsDue.length} months due
                   </span>
                 ) : (
-                  <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-sm font-medium text-green-800 ml-52">
+                  <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-sm font-medium text-green-800">
                     Current
                   </span>
                 )}

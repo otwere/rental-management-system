@@ -109,7 +109,7 @@ export function Communications() {
     <>
       <Card>
         <CardHeader className="flex flex-row items-center justify-between">
-          <CardTitle className="text-xl">Communication History</CardTitle>
+          <CardTitle>Communication History</CardTitle>
           <Button variant="outline" size="sm" onClick={() => setShowNewMessageModal(true)}>
             <MessageSquare className="h-4 w-4 mr-2" />
             New Message

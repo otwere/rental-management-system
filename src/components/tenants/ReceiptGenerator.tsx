@@ -41,7 +41,7 @@ export function ReceiptGenerator({ open, onClose, receipt }: ReceiptGeneratorPro
 
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
-      <DialogContent className="max-w-3xl">
+      <DialogContent className="max-w-2xl">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Receipt className="h-5 w-5" />
@@ -80,10 +80,10 @@ export function ReceiptGenerator({ open, onClose, receipt }: ReceiptGeneratorPro
             </div>
             <div className="text-right">
               <h3 className="font-semibold mb-2">Payment Details</h3>
-              <p className="text-xl font-bold text-primary">KES {receipt.amount.toFixed(2)}</p>
+              <p className="text-xl font-bold text-primary">${receipt.amount.toFixed(2)}</p>
               <p className="text-sm text-muted-foreground">via {receipt.paymentType}</p>
               {receipt.reference && (
-                <p className="text-sm text-muted-foreground">Ref : {receipt.reference}</p>
+                <p className="text-sm text-muted-foreground">Ref: {receipt.reference}</p>
               )}
             </div>
           </div>
@@ -109,7 +109,7 @@ export function ReceiptGenerator({ open, onClose, receipt }: ReceiptGeneratorPro
           {typeof receipt.balance === "number" && (
             <div className="border-t pt-4">
               <div className="flex justify-between items-center">
-                <span className="font-semibold">Remaining Balance :</span>
+                <span className="font-semibold">Remaining Balance:</span>
                 <span className={
                   receipt.balance > 0 
                     ? "text-red-600 font-bold"

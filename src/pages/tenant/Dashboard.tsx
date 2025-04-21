@@ -1,4 +1,3 @@
-
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -13,9 +12,15 @@ import {
   Settings, 
   CheckCircle 
 } from "lucide-react";
+import { useState } from "react";
+import { TenantMaintenanceRequestModal } from "@/components/tenants/TenantMaintenanceRequestModal";
+import { TenantPaymentModal } from "@/components/tenants/TenantPaymentModal";
+import { TenantContactSupportModal } from "@/components/tenants/TenantContactSupportModal";
+import { TenantRentalDetailsModal } from "@/components/tenants/TenantRentalDetailsModal";
+import { MyRentalDetails } from "@/components/tenants/MyRentalDetails";
+import { TenantApplications } from "@/components/tenants/TenantApplications";
 
 export default function TenantDashboard() {
-  // In a real app, this data would come from an API based on the logged-in tenant
   const nextPayment = {
     amount: 2500,
     dueDate: new Date("2025-05-01"),
@@ -38,10 +43,19 @@ export default function TenantDashboard() {
     },
   ];
   
+  const [maintenanceModal, setMaintenanceModal] = useState(false);
+  const [paymentModal, setPaymentModal] = useState(false);
+  const [supportModal, setSupportModal] = useState(false);
+  const [rentalDetailsModal, setRentalDetailsModal] = useState(false);
+
   return (
     <DashboardLayout requiredPermission="view:dashboard">
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold">Tenant Dashboard</h1>
+        <h1 className="text-2xl font-bold">Tenant Dashboard</h1>
+        
+        <MyRentalDetails />
+        
+        <TenantApplications />
         
         <div className="grid gap-6 grid-cols-1 lg:grid-cols-3">
           <div className="lg:col-span-2 space-y-6">
@@ -55,8 +69,8 @@ export default function TenantDashboard() {
                     <Home className="h-12 w-12 text-muted-foreground/50" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold">Modern Downtown Apartment</h3>
-                    <p className="text-muted-foreground mt-1">123 Main Street, Metropolis, NY 10001</p>
+                    <h3 className="text-lg font-semibold">Modern Downtown Apartment</h3>
+                    <p className="text-muted-foreground mt-1">Roysambu Main Home APT, Nairobi County</p>
                     
                     <div className="grid grid-cols-2 gap-4 mt-4">
                       <div>
@@ -91,8 +105,8 @@ export default function TenantDashboard() {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-end gap-2 border-t pt-6">
-                <Button variant="outline">View Details</Button>
-                <Button variant="outline">
+                <Button variant="outline" onClick={() => setRentalDetailsModal(true)}>View Details</Button>
+                <Button variant="outline" onClick={() => setSupportModal(true)}>
                   <MessageSquare className="h-4 w-4 mr-2" />
                   Contact Agent
                 </Button>
@@ -102,7 +116,7 @@ export default function TenantDashboard() {
             <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
               <Card>
                 <CardHeader>
-                  <CardTitle>Maintenance Requests</CardTitle>
+                  <CardTitle className="text-xl">Maintenance Requests</CardTitle>
                 </CardHeader>
                 <CardContent>
                   {maintenanceRequests.length > 0 ? (
@@ -139,13 +153,13 @@ export default function TenantDashboard() {
                   )}
                 </CardContent>
                 <CardFooter className="border-t pt-4">
-                  <Button className="w-full">Submit New Request</Button>
+                  <Button className="w-full" onClick={() => setMaintenanceModal(true)}>Submit New Request</Button>
                 </CardFooter>
               </Card>
               
               <Card>
                 <CardHeader>
-                  <CardTitle>Documents</CardTitle>
+                  <CardTitle className="text-xl">Documents</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
@@ -182,11 +196,11 @@ export default function TenantDashboard() {
           <div className="lg:col-span-1 space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Next Rent Payment</CardTitle>
+                <CardTitle className="text-xl">Next Rent Payment</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-center py-4">
-                  <div className="text-3xl font-bold">${nextPayment.amount}</div>
+                  <div className="text-xl font-bold">KES {nextPayment.amount}</div>
                   <p className="text-muted-foreground">Due in {daysUntilDue} days</p>
                   
                   <div className="mt-6 space-y-2">
@@ -203,13 +217,13 @@ export default function TenantDashboard() {
                 </div>
               </CardContent>
               <CardFooter className="border-t pt-4">
-                <Button className="w-full">Make Payment</Button>
+                <Button className="w-full" onClick={() => setPaymentModal(true)}>Make Payment</Button>
               </CardFooter>
             </Card>
             
             <Card>
               <CardHeader>
-                <CardTitle>Payment History</CardTitle>
+                <CardTitle className="text-xl">Payment History</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
@@ -219,8 +233,8 @@ export default function TenantDashboard() {
                       <p className="text-xs text-muted-foreground">Paid on Apr 1, 2025</p>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium">$2,500</span>
-                      <CheckCircle className="h-4 w-4 text-primary" />
+                      <span className="text-sm font-medium">KES 2,500</span>
+                      <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                   </li>
                   <li className="flex items-center justify-between p-2 rounded-lg hover:bg-muted">
@@ -229,8 +243,8 @@ export default function TenantDashboard() {
                       <p className="text-xs text-muted-foreground">Paid on Mar 1, 2025</p>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium">$2,500</span>
-                      <CheckCircle className="h-4 w-4 text-primary" />
+                      <span className="text-sm font-medium">KES 2,500</span>
+                      <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                   </li>
                   <li className="flex items-center justify-between p-2 rounded-lg hover:bg-muted">
@@ -239,20 +253,20 @@ export default function TenantDashboard() {
                       <p className="text-xs text-muted-foreground">Paid on Feb 1, 2025</p>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium">$2,500</span>
-                      <CheckCircle className="h-4 w-4 text-primary" />
+                      <span className="text-sm font-medium">KES 2,500</span>
+                      <CheckCircle className="h-4 w-4 text-green-500" />
                     </div>
                   </li>
                 </ul>
               </CardContent>
               <CardFooter className="border-t pt-4">
-                <Button variant="outline" className="w-full">View All Payments</Button>
+                <Button variant="outline" className="w-full" onClick={() => window.location.href = "/tenant/payments"}>View All Payments</Button>
               </CardFooter>
             </Card>
             
             <Card>
               <CardHeader className="pb-2">
-                <CardTitle>Need Help?</CardTitle>
+                <CardTitle className="text-xl">Need Help?</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-center py-4">
@@ -261,7 +275,7 @@ export default function TenantDashboard() {
                   <p className="text-sm text-muted-foreground mt-1">
                     Contact your property manager for assistance with your rental.
                   </p>
-                  <Button className="mt-4 w-full">
+                  <Button className="mt-4 w-full" onClick={() => setSupportModal(true)}>
                     <MessageSquare className="h-4 w-4 mr-2" />
                     Contact Support
                   </Button>
@@ -271,6 +285,10 @@ export default function TenantDashboard() {
           </div>
         </div>
       </div>
+      <TenantMaintenanceRequestModal open={maintenanceModal} onClose={()=>setMaintenanceModal(false)} />
+      <TenantPaymentModal open={paymentModal} onClose={()=>setPaymentModal(false)} />
+      <TenantContactSupportModal open={supportModal} onClose={()=>setSupportModal(false)} />
+      <TenantRentalDetailsModal open={rentalDetailsModal} onClose={()=>setRentalDetailsModal(false)} />
     </DashboardLayout>
   );
 }

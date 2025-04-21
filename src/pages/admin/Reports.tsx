@@ -447,7 +447,7 @@ export default function AdminReports() {
         {/* Report Preview for Print */}
         <div className="hidden print:block space-y-6">
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold mb-2">Estate Nexus {reportType === "financial" ? "Financial" : reportType === "occupancy" ? "Occupancy" : "Maintenance"} Report</h1>
+            <h1 className="text-2xl font-bold mb-2">Rental  Portal {reportType === "financial" ? "Financial" : reportType === "occupancy" ? "Occupancy" : "Maintenance"} Report</h1>
             <p className="text-gray-500">Generated on {new Date().toLocaleDateString()}</p>
           </div>
           
