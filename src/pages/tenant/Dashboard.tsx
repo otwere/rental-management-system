@@ -69,7 +69,7 @@ export default function TenantDashboard() {
                     <Home className="h-12 w-12 text-muted-foreground/50" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold">Modern Downtown Apartment</h3>
+                    <h3 className="text-[1rem] font-semibold">Modern Downtown Apartment</h3>
                     <p className="text-muted-foreground mt-1">Roysambu Main Home APT, Nairobi County</p>
                     
                     <div className="grid grid-cols-2 gap-4 mt-4">

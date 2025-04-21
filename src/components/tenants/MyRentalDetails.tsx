@@ -43,8 +43,8 @@ export function MyRentalDetails() {
       { label: "Building Rules", file: "rules.pdf" }
     ],
     agent: {
-      name: "Samantha Lee",
-      email: "samantha@propertynexus.com",
+      name: "Frontend Dev",
+      email: "otweree@gmail.com",
       phone: "+254 733 443 225",
       photo: demoImage
     },
@@ -193,11 +193,11 @@ export function MyRentalDetails() {
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">Monthly Rent</div>
-                <div className="font-medium">${rental.monthlyRent}</div>
+                <div className="font-medium">KES {rental.monthlyRent}</div>
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">Deposit Paid</div>
-                <div className="font-medium">${rental.deposit}</div>
+                <div className="font-medium">KES {rental.deposit}</div>
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">Last Paid</div>
