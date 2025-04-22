@@ -31,7 +31,7 @@ export function RefundReceiptView({ refund }: RefundReceiptProps) {
   
   return (
     <ScrollArea className="h-full w-full p-6 print:p-0">
-      <div className="max-w-2xl mx-auto space-y-8 print:space-y-6">
+      <div className="max-w-4xl mx-auto space-y-8 print:space-y-6">
         <div className="text-center space-y-2">
           <h1 className="text-2xl font-bold">Security Deposit Refund Receipt</h1>
           <p className="text-muted-foreground">Reference: #{refund.reference || refund.id}</p>

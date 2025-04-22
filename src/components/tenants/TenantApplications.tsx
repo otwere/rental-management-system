@@ -82,7 +82,7 @@ export function TenantApplications() {
                   <span className="text-xs text-muted-foreground">{app.date}</span>
                   {/* Status explainer */}
                   {app.status === "pending" && <span className="text-xs text-yellow-700 ml-3">Awaiting review</span>}
-                  {app.status === "approved" && <span className="text-xs text-green-700 ml-3">You are moving forward!</span>}
+                  {app.status === "approved" && <span className="text-xs text-green-500 ml-3"> Active Lease</span>}
                   {app.status === "rejected" && <span className="text-xs text-red-600 ml-3">Not selected</span>}
                 </div>
                 {/* Extra detail about process */}

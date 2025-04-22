@@ -19,10 +19,10 @@ import { ChevronDown } from "lucide-react";
 export default function AdminTenantDetails() {
   const tenant = {
     id: "t1",
-    name: "John Doe",
+    name: "Simba Eagle",
     email: "john@example.com",
-    phone: "+1 (555) 123-4567",
-    phoneNumber: "+1 (555) 123-4567",
+    phone: "+254733443224",
+    phoneNumber: "+254733443224",
     moveInDate: "2023-01-15",
     leaseEnd: "2024-01-14",
     leaseEndDate: "2024-01-14",
@@ -34,7 +34,7 @@ export default function AdminTenantDetails() {
     emergencyContact: {
       name: "Jane Doe",
       relationship: "Sister",
-      phone: "+1 (555) 987-6543"
+      phone: "+254 700 987-6543"
     },
     occupants: 2,
     balance: 2500,

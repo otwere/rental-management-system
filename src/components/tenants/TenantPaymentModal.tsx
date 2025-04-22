@@ -217,7 +217,7 @@ export function TenantPaymentModal({ open, onClose, onPaymentSuccess }: Props) {
     if (step === "stkpending") {
       timer = setTimeout(() => {
         setStkConfirmed(true) // Confirm STK push
-      }, 5000) // 5 seconds delay before confirming STK push
+      }, 8000) // 8 seconds delay before confirming STK push
 
       const processingTimer = setTimeout(() => {
         setSubmitted(true)
@@ -230,7 +230,7 @@ export function TenantPaymentModal({ open, onClose, onPaymentSuccess }: Props) {
           setSubmitted(false)
           setStep("success")
         })
-      }, 4000) // 4 seconds delay before proceeding to processing
+      }, 5000) // 5 seconds delay before proceeding to processing
 
       return () => {
         clearTimeout(timer)
@@ -343,7 +343,7 @@ export function TenantPaymentModal({ open, onClose, onPaymentSuccess }: Props) {
   }
 
   const formatCurrency = (value: string | number) => {
-    return new Intl.NumberFormat("en-KE", {
+    return new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "KES",
       minimumFractionDigits: 0,
@@ -755,7 +755,7 @@ export function TenantPaymentModal({ open, onClose, onPaymentSuccess }: Props) {
                 <h3 className="text-lg font-semibold">Verify with OTP</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
                   An OTP (One-Time Password) has been sent via SMS to{" "}
-                  <span className="font-mono">{maskPhoneNumber(mpesaPhone)}</span>.
+                  <span className="font-poppins">{maskPhoneNumber(mpesaPhone)}</span>.
                   <br />
                   Please enter the 6-digit code to proceed with payment.
                 </p>
@@ -814,7 +814,7 @@ export function TenantPaymentModal({ open, onClose, onPaymentSuccess }: Props) {
                       <Phone className="h-8 w-8 text-slate-600 dark:text-slate-400" />
                     </div>
                     <h3 className="text-lg font-semibold">
-                      STK Push sent to <span className="font-mono">{maskPhoneNumber(mpesaPhone)}</span>
+                      STK Push sent to <span className="font-poppins">{maskPhoneNumber(mpesaPhone)}</span>
                     </h3>
                     <p className="text-sm text-slate-600 dark:text-slate-400 max-w-xs mx-auto">
                       Please enter your Mpesa PIN on your phone to complete the payment.
@@ -876,7 +876,7 @@ export function TenantPaymentModal({ open, onClose, onPaymentSuccess }: Props) {
                       <div className="text-slate-500 dark:text-slate-400">Tenant</div>
                       <div className="font-medium">{transactionDetails.tenant.name}</div>
 
-                      <div className="text-slate-500 dark:text-slate-400">Type</div>
+                      <div className="text-slate-500 dark:text-slate-400">Mode of Payment</div>
                       <div className="font-medium">{transactionDetails.type}</div>
 
                       <div className="text-slate-500 dark:text-slate-400">Required Amount</div>
@@ -927,7 +927,7 @@ export function TenantPaymentModal({ open, onClose, onPaymentSuccess }: Props) {
                       {transactionDetails.phone && (
                         <>
                           <div className="text-slate-500 dark:text-slate-400">Phone Used</div>
-                          <div className="font-medium font-mono">{maskPhoneNumber(transactionDetails.phone)}</div>
+                          <div className="font-medium font-poppins">{maskPhoneNumber(transactionDetails.phone)}</div>
                         </>
                       )}
 
@@ -948,7 +948,7 @@ export function TenantPaymentModal({ open, onClose, onPaymentSuccess }: Props) {
                       <div className="text-slate-500 dark:text-slate-400">
                         {transactionDetails.type === "Mpesa" ? "Mpesa Ref" : "Slip Ref"}
                       </div>
-                      <div className="font-medium font-mono">{transactionDetails.ref}</div>
+                      <div className="font-medium font-poppins">{transactionDetails.ref}</div>
 
                       <div className="text-slate-500 dark:text-slate-400">Status</div>
                       <div>

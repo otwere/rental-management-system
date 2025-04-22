@@ -170,7 +170,7 @@ export function DepositRefundModal({ open, onClose, onSubmit, tenant, onMoveOut 
   if (showPreview) {
     return (
       <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
-        <DialogContent className="max-w-3xl h-[80vh]">
+        <DialogContent className="max-w-5xl h-[90vh]">
           <DialogHeader className="flex flex-row items-center justify-between">
             <DialogTitle>Refund Preview</DialogTitle>
             <div className="flex gap-2">
@@ -207,7 +207,7 @@ export function DepositRefundModal({ open, onClose, onSubmit, tenant, onMoveOut 
 
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
+      <DialogContent className="max-w-5xl max-h-[90vh] overflow-hidden flex flex-col">
         <DialogHeader>
           <DialogTitle>Process Security Deposit Refund</DialogTitle>
         </DialogHeader>

@@ -43,8 +43,8 @@ export function MyRentalDetails() {
       { label: "Building Rules", file: "rules.pdf" }
     ],
     agent: {
-      name: "Samantha Lee",
-      email: "samantha@propertynexus.com",
+      name: "Pauline Mercy",
+      email: "pauline.mercy@estate.com",
       phone: "(555) 123-4567",
       photo: demoImage
     },
@@ -166,7 +166,7 @@ export function MyRentalDetails() {
                 <div className="text-xs text-muted-foreground">Utilities Included</div>
                 <div className="flex flex-wrap gap-1 mt-1">
                   {rental.utilitiesIncluded.map(ut => (
-                    <span key={ut} className="bg-green-50 px-2 py-0.5 rounded text-xs">{ut}</span>
+                    <span key={ut} className="bg-gray-50 px-2 py-0.5 rounded text-xs text-green-700">{ut}</span>
                   ))}
                 </div>
               </div>

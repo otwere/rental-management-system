@@ -81,7 +81,7 @@ export function PaymentHistory({ payments, monthsDue = [], monthsAdvance, onRece
     return {
       id: payment.id,
       date: payment.date,
-      tenantName: "John Doe", // This would come from props in a real app
+      tenantName: "Simba Eagle", // This would come from props in a real app
       tenantEmail: "john@example.com", // This would come from props in a real app
       amount: payment.amount,
       paymentType: payment.paymentMode || "Cash",

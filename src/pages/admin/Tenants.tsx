@@ -27,28 +27,28 @@ export default function AdminTenants() {
   const allTenants = [
     {
       id: "t1",
-      name: "John Doe",
+      name: "Simba Eagle",
       unit: "Apt 301",
       moveInDate: "2023-01-15",
       leaseEnd: "2024-01-14",
       rentStatus: "current",
       lastPayment: "2024-03-01",
       rentAmount: 2500,
-      phoneNumber: "+1 (555) 123-4567",
+      phoneNumber: "+254733443224",
       email: "john@example.com",
       occupants: 2,
       pets: "1 cat",
     },
     {
       id: "t2",
-      name: "Jane Smith",
+      name: "Mercy Wish",
       unit: "Apt 205",
       moveInDate: "2023-03-01",
       leaseEnd: "2024-02-28",
       rentStatus: "late",
       lastPayment: "2024-02-01",
       rentAmount: 2200,
-      phoneNumber: "+1 (555) 987-6543",
+      phoneNumber: "+254 700 987-6543",
       email: "jane@example.com",
       occupants: 1,
       pets: "No pets",
@@ -62,7 +62,7 @@ export default function AdminTenants() {
       rentStatus: "current",
       lastPayment: "2024-03-01",
       rentAmount: 2300,
-      phoneNumber: "+1 (555) 456-7890",
+      phoneNumber: "+254 700 456-7890",
       email: "robert@example.com",
       occupants: 3,
       pets: "2 dogs",
@@ -276,7 +276,7 @@ export default function AdminTenants() {
                     </TableCell>
                     <TableCell>{tenant.lastPayment}</TableCell>
                     <TableCell>
-                      <span className="font-mono">{monthsBetweenDates(tenant.moveInDate, new Date().toISOString().slice(0,10))} months</span>
+                      <span className="font-poppins">{monthsBetweenDates(tenant.moveInDate, new Date().toISOString().slice(0,10))} months</span>
                     </TableCell>
                     <TableCell className="text-right flex gap-2 justify-end">
                       <Button variant="outline" size="sm" asChild>

@@ -87,7 +87,7 @@ export default function TenantPayments() {
             <div className="grid gap-4 md:grid-cols-3">
               <div className="bg-green-50 p-4 rounded-lg">
                 <div className="text-sm text-green-600 font-medium">Current Month</div>
-                <div className="text-2xl font-bold mt-1">{formatCurrency(2500)}</div>
+                <div className="text-2xl font-bold text-green-700 mt-1">{formatCurrency(2500)}</div>
                 <div className="text-sm text-green-700 mt-1 flex items-center">
                   <CheckCircle className="h-4 w-4 mr-1" /> Paid on {formatPaymentDate("2025-04-01")}
                 </div>

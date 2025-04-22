@@ -44,7 +44,7 @@ export default function AdminSettings() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" />
+                    <Input id="phone" type="tel" placeholder="+254 700 000-0000" />
                   </div>
                 </div>
                 <Button>Save Changes</Button>

@@ -168,7 +168,7 @@ export function MaintenanceRequests({ requests }: MaintenanceRequestsProps) {
             </DialogHeader>
             <div className="mb-2">
               <div className="text-sm font-medium">Status:{" "}
-                <span className="font-mono">
+                <span className="font-poppins">
                   {selected?.status}
                 </span>
               </div>

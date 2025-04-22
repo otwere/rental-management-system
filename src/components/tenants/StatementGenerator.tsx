@@ -59,7 +59,7 @@ export function StatementGenerator({ open, onClose, statement }: StatementGenera
 
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-hidden flex flex-col">
+      <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden flex flex-col">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <FileText className="h-5 w-5" />
@@ -73,11 +73,11 @@ export function StatementGenerator({ open, onClose, statement }: StatementGenera
             <div>
               <h2 className="text-2xl font-bold text-primary">ACCOUNT STATEMENT</h2>
               <p className="text-sm text-muted-foreground">Statement #{statement.id}</p>
-              <p className="text-sm text-muted-foreground">Generated: {new Date().toLocaleDateString()}</p>
+              <p className="text-sm text-muted-foreground">Generated : {new Date().toLocaleDateString()}</p>
             </div>
             <div className="text-right">
               <p className="font-medium">Period: {statement.period.from} to {statement.period.to}</p>
-              <p className="text-sm text-muted-foreground">Due Date: {statement.dueDate}</p>
+              <p className="text-sm text-muted-foreground">Due Date : {statement.dueDate}</p>
             </div>
           </div>
 
@@ -87,13 +87,13 @@ export function StatementGenerator({ open, onClose, statement }: StatementGenera
               <h3 className="font-semibold mb-2">Tenant Information</h3>
               <p>{statement.tenantName}</p>
               <p className="text-sm text-muted-foreground">{statement.tenantEmail}</p>
-              <p className="text-sm text-muted-foreground">Unit: {statement.unit}</p>
+              <p className="text-sm text-muted-foreground">Unit : {statement.unit}</p>
             </div>
             <div className="text-right">
               <h3 className="font-semibold mb-2">Statement Summary</h3>
-              <p>Total Charges: ${formatAmount(totalCharges)}</p>
-              <p>Total Payments: ${formatAmount(totalPayments)}</p>
-              <p className="font-bold mt-2">Balance Due: ${formatAmount(statement.balance)}</p>
+              <p>Total Charges : KES {formatAmount(totalCharges)}</p>
+              <p>Total Payments : KES {formatAmount(totalPayments)}</p>
+              <p className="font-bold mt-2">Balance Due : KES {formatAmount(statement.balance)}</p>
             </div>
           </div>
 
