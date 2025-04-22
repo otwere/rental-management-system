@@ -41,7 +41,6 @@ export default function Login() {
       form.setValue("email", rememberedEmail);
       form.setValue("rememberMe", true);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const form = useForm<LoginFormData>({
@@ -75,7 +74,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen max-w-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-teal-50 dark:from-gray-900 dark:to-gray-800 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-teal-50 dark:from-gray-900 dark:to-gray-800 px-4">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-40 -left-40 w-80 h-80 bg-blue-100 dark:bg-blue-900/20 rounded-full blur-3xl opacity-50"></div>
         <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-teal-100 dark:bg-teal-900/20 rounded-full blur-3xl opacity-50"></div>
@@ -100,7 +99,17 @@ export default function Login() {
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
-          
+
+          <div className="grid grid-cols-1 gap-4 mb-6">
+            {/* <Button 
+              variant="outline" 
+              className="w-full hover-scale bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm"
+              onClick={() => handleSocialLogin("github")}
+            >
+              <Github className="mr-2 h-4 w-4" />
+              Continue with GitHub
+            </Button> */}
+          </div>
 
           <div className="relative mb-6">
             <div className="absolute inset-0 flex items-center">
@@ -108,7 +117,7 @@ export default function Login() {
             </div>
             <div className="relative flex justify-center text-xs uppercase">
               <span className="px-2 bg-white/70 dark:bg-gray-900/50 text-muted-foreground">
-               +254 733 443 224 | +254 700 520 008
+               +254 700 520 008 | +254 733 443 224
               </span>
             </div>
           </div>
@@ -127,7 +136,7 @@ export default function Login() {
                         <Input 
                           {...field} 
                           type="email" 
-                          placeholder="you@example.com"
+                          placeholder="you@estate.com"
                           className="pl-9 h-11 bg-white/70 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700 shadow-sm backdrop-blur-sm focus:border-primary focus:ring-primary"
                         />
                       </div>

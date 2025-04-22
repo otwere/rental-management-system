@@ -33,7 +33,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, [user]);
 
-  // Used Check if the current user has a specific permission
+  // Check if the current user has a specific permission
   const hasPermission = (permission: string): boolean => {
     if (!user) return false;
     

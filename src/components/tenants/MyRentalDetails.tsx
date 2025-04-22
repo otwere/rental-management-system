@@ -43,9 +43,9 @@ export function MyRentalDetails() {
       { label: "Building Rules", file: "rules.pdf" }
     ],
     agent: {
-      name: "Frontend Dev",
-      email: "otweree@gmail.com",
-      phone: "+254 733 443 225",
+      name: "Samantha Lee",
+      email: "samantha@propertynexus.com",
+      phone: "(555) 123-4567",
       photo: demoImage
     },
     utilitiesIncluded: ["Water", "Trash", "Sewer"],
@@ -140,11 +140,11 @@ export function MyRentalDetails() {
               </div>
               <div>
                 <span className="text-muted-foreground">Payment</span>
-                <div className="font-semibold">KES {rental.monthlyRent}/mo</div>
+                <div className="font-semibold">${rental.monthlyRent}/mo</div>
               </div>
               <div>
                 <span className="text-muted-foreground">Deposit</span>
-                <div className="font-semibold">KES {rental.deposit}</div>
+                <div className="font-semibold">${rental.deposit}</div>
               </div>
               <div>
                 <span className="text-muted-foreground">Payment Schedule</span>
@@ -166,7 +166,7 @@ export function MyRentalDetails() {
                 <div className="text-xs text-muted-foreground">Utilities Included</div>
                 <div className="flex flex-wrap gap-1 mt-1">
                   {rental.utilitiesIncluded.map(ut => (
-                    <span key={ut} className="bg-green-50 px-2 py-0.5 rounded text-xs text-gray-800">{ut}</span>
+                    <span key={ut} className="bg-green-50 px-2 py-0.5 rounded text-xs">{ut}</span>
                   ))}
                 </div>
               </div>
@@ -193,11 +193,11 @@ export function MyRentalDetails() {
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">Monthly Rent</div>
-                <div className="font-medium">KES {rental.monthlyRent}</div>
+                <div className="font-medium">${rental.monthlyRent}</div>
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">Deposit Paid</div>
-                <div className="font-medium">KES {rental.deposit}</div>
+                <div className="font-medium">${rental.deposit}</div>
               </div>
               <div>
                 <div className="text-xs text-muted-foreground">Last Paid</div>

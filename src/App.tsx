@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -37,6 +37,7 @@ import { default as AgentTenantDetails } from "./pages/agent/TenantDetails";
 
 // Import tenant pages
 import { default as TenantDashboard } from "./pages/tenant/Dashboard";
+import { default as TenantPayments } from "./pages/tenant/Payments";
 
 const queryClient = new QueryClient();
 
@@ -102,6 +103,11 @@ const App = () => (
                 
                 {/* Tenant routes */}
                 <Route path="/tenant" element={<TenantDashboard />} />
+                <Route path="/tenant/payments" element={
+                  <Suspense fallback={<div className="flex items-center justify-center h-screen">Loading...</div>}>
+                    <TenantPayments />
+                  </Suspense>
+                } />
                 
                 <Route path="*" element={<NotFound />} />
               </Routes>

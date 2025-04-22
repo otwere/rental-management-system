@@ -17,7 +17,7 @@ export default function AdminDashboard() {
   const recentActivity = [
     { id: 1, action: "Property Added", description: "New property added at 123 Main St", date: "1 hour ago" },
     { id: 2, action: "Tenant Application", description: "New application received for Downtown Apartment", date: "3 hours ago" },
-    { id: 3, action: "Payment Received", description: "$2,500 payment received from Simba Tenant", date: "Yesterday" },
+    { id: 3, action: "Payment Received", description: "$2,500 payment received from John Tenant", date: "Yesterday" },
     { id: 4, action: "Maintenance Request", description: "Urgent plumbing issue reported at Oak Ave property", date: "2 days ago" },
   ];
 
@@ -30,7 +30,7 @@ export default function AdminDashboard() {
     <DashboardLayout requiredPermission="view:dashboard">
       <div className="space-y-6">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold">Admin Dashboard</h1>
+          <h1 className="text-3xl font-bold">Admin Dashboard</h1>
           <div className="flex gap-2">
             <Button variant="outline">
               <Activity className="h-4 w-4 mr-2" />
@@ -112,7 +112,7 @@ export default function AdminDashboard() {
         <div className="grid gap-6 grid-cols-1 lg:grid-cols-2">
           <Card>
             <CardHeader>
-              <CardTitle className="text-xl">Recent Activity</CardTitle>
+              <CardTitle>Recent Activity</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-4">
@@ -142,14 +142,14 @@ export default function AdminDashboard() {
           
           <Card>
             <CardHeader>
-              <CardTitle className="text-xl">Financial Overview</CardTitle>
+              <CardTitle>Financial Overview</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <div>
                     <p className="text-sm font-medium">Monthly Revenue</p>
-                    <p className="text-2xl font-bold">KES 28,500</p>
+                    <p className="text-2xl font-bold">$28,500</p>
                     <p className="text-xs text-green-600 flex items-center gap-1">
                       <TrendingUp className="h-3 w-3" /> +5.2% vs last month
                     </p>
@@ -183,7 +183,7 @@ export default function AdminDashboard() {
                   <div className="flex justify-between items-center">
                     <div>
                       <p className="text-sm font-medium">Annual Projection</p>
-                      <p className="text-xl font-bold">KES 342,000</p>
+                      <p className="text-xl font-bold">$342,000</p>
                     </div>
                   </div>
                 </div>

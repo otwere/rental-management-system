@@ -222,7 +222,7 @@ export default function Register() {
               </SelectContent>
             </Select>
             <p className="text-xs text-muted-foreground mt-1">
-              Note: In a production environment, role selection would be restricted and verified.
+              {/* Note: In a production environment, role selection would be restricted and verified. */}
             </p>
           </div>
 

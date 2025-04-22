@@ -152,7 +152,7 @@ export const MOCK_USERS: User[] = [
   {
     id: "tenant-1",
     email: "tenant@estate.com",
-    name: "Simba Tenant",
+    name: "John Tenant",
     role: "tenant",
     verified: true,
     createdAt: new Date("2023-03-10"),

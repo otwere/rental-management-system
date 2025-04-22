@@ -19,10 +19,10 @@ import { ChevronDown } from "lucide-react";
 export default function AdminTenantDetails() {
   const tenant = {
     id: "t1",
-    name: "Mercy Mayra",
-    email: "Simba@example.com",
-    phone: "+254 700123-4567",
-    phoneNumber: "+254 700123-4567",
+    name: "John Doe",
+    email: "john@example.com",
+    phone: "+1 (555) 123-4567",
+    phoneNumber: "+1 (555) 123-4567",
     moveInDate: "2023-01-15",
     leaseEnd: "2024-01-14",
     leaseEndDate: "2024-01-14",
@@ -32,9 +32,9 @@ export default function AdminTenantDetails() {
     status: "active",
     paymentStatus: "overdue" as "current" | "overdue",
     emergencyContact: {
-      name: "tallhawk Mercy",
+      name: "Jane Doe",
       relationship: "Sister",
-      phone: "+254 700987-6543"
+      phone: "+1 (555) 987-6543"
     },
     occupants: 2,
     balance: 2500,
@@ -131,7 +131,7 @@ export default function AdminTenantDetails() {
     <DashboardLayout requiredPermission="manage:tenants">
       <div className="space-y-6">
         <div className="flex items-center justify-between">
-          <h1 className="text-xl font-bold">Tenant Details</h1>
+          <h1 className="text-3xl font-bold">Tenant Details</h1>
           <div className="flex gap-2">
             <Button variant="outline" onClick={() => setShowEditModal(true)}>
               <ChevronDown className="h-4 w-4 mr-2" />

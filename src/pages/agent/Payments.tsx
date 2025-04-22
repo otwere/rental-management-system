@@ -65,7 +65,7 @@ export default function AgentPayments() {
     {
       id: "pmt-1",
       tenantId: "tenant-1",
-      tenantName: "Mercy Mayra",
+      tenantName: "John Doe",
       propertyId: "1",
       propertyName: "Sunset Apartments",
       amount: 1500,
@@ -78,7 +78,7 @@ export default function AgentPayments() {
     {
       id: "pmt-2",
       tenantId: "tenant-2",
-      tenantName: "Tall Hawk",
+      tenantName: "Jane Smith",
       propertyId: "2",
       propertyName: "Urban Lofts",
       amount: 2000,
@@ -104,7 +104,7 @@ export default function AgentPayments() {
     {
       id: "pmt-4",
       tenantId: "tenant-4",
-      tenantName: "Emma Simbason",
+      tenantName: "Emma Johnson",
       propertyId: "2",
       propertyName: "Urban Lofts",
       amount: 1200,
@@ -117,7 +117,7 @@ export default function AgentPayments() {
     {
       id: "pmt-5",
       tenantId: "tenant-1",
-      tenantName: "Mercy Mayra",
+      tenantName: "John Doe",
       propertyId: "1",
       propertyName: "Sunset Apartments",
       amount: 50,
@@ -130,7 +130,7 @@ export default function AgentPayments() {
     {
       id: "pmt-6",
       tenantId: "tenant-2",
-      tenantName: "Tall Hawk",
+      tenantName: "Jane Smith",
       propertyId: "2",
       propertyName: "Urban Lofts",
       amount: 75,
@@ -181,7 +181,7 @@ export default function AgentPayments() {
     const newPayment: Payment = {
       id: `pmt-${Date.now()}`,
       tenantId: "tenant-2",
-      tenantName: "Tall Hawk",
+      tenantName: "Jane Smith",
       propertyId: "2",
       propertyName: "Urban Lofts",
       amount: 2000,
@@ -196,7 +196,7 @@ export default function AgentPayments() {
     
     toast({
       title: "Reminder sent",
-      description: `Payment reminder has been sent to Tall Hawk.`
+      description: `Payment reminder has been sent to Jane Smith.`
     });
   };
 

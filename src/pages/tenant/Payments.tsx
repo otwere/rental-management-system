@@ -1,3 +1,4 @@
+
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -71,7 +72,7 @@ export default function TenantPayments() {
     <DashboardLayout requiredPermission="view:dashboard">
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-bold">My Payments</h1>
+          <h1 className="text-2xl font-bold">My Payments</h1>
           <Button onClick={() => setPaymentModal(true)}>
             <CreditCard className="h-4 w-4 mr-2" />
             Make Payment

@@ -208,7 +208,7 @@ export default function AdminUsers() {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold">User Management</h1>
+            <h1 className="text-3xl font-bold">User Management</h1>
             <p className="text-muted-foreground mt-1">
               Manage users and their access rights
             </p>
@@ -291,7 +291,7 @@ export default function AdminUsers() {
 
           <Card className="mt-6">
             <CardHeader>
-              <CardTitle className="text-xl">User Directory</CardTitle>
+              <CardTitle>User Directory</CardTitle>
               <CardDescription>
                 Manage user accounts and access permissions
               </CardDescription>

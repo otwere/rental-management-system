@@ -82,7 +82,7 @@ export function TenantApplications() {
                   <span className="text-xs text-muted-foreground">{app.date}</span>
                   {/* Status explainer */}
                   {app.status === "pending" && <span className="text-xs text-yellow-700 ml-3">Awaiting review</span>}
-                  {app.status === "approved" && <span className="text-xs text-green-500 ml-3">Active Lease!</span>}
+                  {app.status === "approved" && <span className="text-xs text-green-700 ml-3">You are moving forward!</span>}
                   {app.status === "rejected" && <span className="text-xs text-red-600 ml-3">Not selected</span>}
                 </div>
                 {/* Extra detail about process */}
@@ -93,10 +93,10 @@ export function TenantApplications() {
                 )}
                 {/* Show property info (mock) */}
                 <div className="mt-1 text-xs flex flex-wrap gap-5 text-muted-foreground">
-                  <span>Lease : 12 months</span>
-                  <span>Bedrooms : 2</span>
-                  <span>Bathrooms : 2</span>
-                  <span>Monthly Rent : KES 2,500</span>
+                  <span>Lease: 12 months</span>
+                  <span>Bedrooms: 2</span>
+                  <span>Bathrooms: 2</span>
+                  <span>Monthly Rent: $2,500</span>
                 </div>
                 {app.comment && <div className="mt-1 text-xs text-muted-foreground italic">{app.comment}</div>}
                 {app.document && (

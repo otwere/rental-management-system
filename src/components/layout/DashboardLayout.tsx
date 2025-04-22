@@ -37,7 +37,7 @@ export function DashboardLayout({ children, requiredPermission }: DashboardLayou
     return <Navigate to="/login" replace />;
   }
   
-  // If permission is required but user Mercysn't have it, show unauthorized message
+  // If permission is required but user doesn't have it, show unauthorized message
   if (requiredPermission && !hasPermission(requiredPermission)) {
     return (
       <div className="flex items-center justify-center h-screen bg-background">

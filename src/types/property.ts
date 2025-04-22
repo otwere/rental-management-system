@@ -89,8 +89,8 @@ export const MOCK_PROPERTIES: Property[] = [
         applications: [
           {
             id: "app1",
-            name: "Simba Smith",
-            email: "Simba@example.com",
+            name: "John Smith",
+            email: "john@example.com",
             phone: "555-123-4567",
             income: 85000,
             status: "pending",

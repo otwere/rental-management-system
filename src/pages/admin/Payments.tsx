@@ -63,9 +63,9 @@ const PAYMENT_HISTORY = [
 const TENANTS_FINANCIAL_DATA = [
   {
     id: 1,
-    name: "Simba Smith",
+    name: "John Smith",
     unit: "Apt 101",
-    email: "Simba@example.com",
+    email: "john@example.com",
     balance: 0,
     deposit: 3000,
     depositStatus: "held",
@@ -74,7 +74,7 @@ const TENANTS_FINANCIAL_DATA = [
   },
   {
     id: 2,
-    name: "Sarah Simbason",
+    name: "Sarah Johnson",
     unit: "Apt 205",
     email: "sarah@example.com",
     balance: 2500,
@@ -162,7 +162,7 @@ export default function AdminPayments() {
     });
   };
 
-  const handleRecordPayment = (_paymentData: any) => {
+  const handleRecordPayment = (paymentData: any) => {
     toast({
       title: "Payment Recorded",
       description: "The payment has been successfully recorded.",
@@ -173,7 +173,7 @@ export default function AdminPayments() {
     <DashboardLayout requiredPermission="manage:payments">
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <h1 className="text-2xl font-bold">Payments Overview</h1>
+          <h1 className="text-3xl font-bold">Payments Overview</h1>
           <div className="flex flex-wrap gap-2">
             <Button variant="outline" onClick={handleDownloadReport}>
               <Download className="h-4 w-4 mr-2" />
@@ -197,21 +197,21 @@ export default function AdminPayments() {
             <div className="grid gap-6 md:grid-cols-3">
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-xl">Total Revenue</CardTitle>
+                  <CardTitle>Total Revenue</CardTitle>
                   <CardDescription>This quarter</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">KES {totalRevenue.toLocaleString()}</div>
+                  <div className="text-3xl font-bold">${totalRevenue.toLocaleString()}</div>
                   <p className="text-sm text-muted-foreground">+12.3% from last quarter</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-xl">Pending Payments</CardTitle>
+                  <CardTitle>Pending Payments</CardTitle>
                   <CardDescription>Overdue accounts</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">{overduePayments}</div>
+                  <div className="text-3xl font-bold">{overduePayments}</div>
                   <p className="text-sm text-muted-foreground">
                     ${TENANTS_FINANCIAL_DATA.reduce((sum, tenant) => sum + tenant.balance, 0).toLocaleString()} total outstanding
                   </p>
@@ -219,11 +219,11 @@ export default function AdminPayments() {
               </Card>
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-xl">Collection Rate</CardTitle>
+                  <CardTitle>Collection Rate</CardTitle>
                   <CardDescription>Current quarter</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">{collectionRate}%</div>
+                  <div className="text-3xl font-bold">{collectionRate}%</div>
                   <Progress value={collectionRate} className="mt-2" />
                 </CardContent>
               </Card>
@@ -248,7 +248,7 @@ export default function AdminPayments() {
                           </div>
                         </div>
                         <div className="text-right">
-                          <p className="font-medium">KES {payment.amount}</p>
+                          <p className="font-medium">${payment.amount}</p>
                           <p className="text-sm text-muted-foreground">{payment.date}</p>
                         </div>
                       </div>
@@ -266,7 +266,7 @@ export default function AdminPayments() {
                     <div>
                       <div className="flex items-center justify-between mb-2">
                         <p className="text-sm text-muted-foreground">Rental Revenue</p>
-                        <p className="font-medium">KES {totalRevenue.toLocaleString()}</p>
+                        <p className="font-medium">${totalRevenue.toLocaleString()}</p>
                       </div>
                       <Progress value={100} className="h-2" />
                     </div>
@@ -275,7 +275,7 @@ export default function AdminPayments() {
                       <div className="flex items-center justify-between mb-2">
                         <p className="text-sm text-muted-foreground">Security Deposits Held</p>
                         <p className="font-medium">
-                          KES {TENANTS_FINANCIAL_DATA.reduce((sum, tenant) => sum + tenant.deposit, 0).toLocaleString()}
+                          ${TENANTS_FINANCIAL_DATA.reduce((sum, tenant) => sum + tenant.deposit, 0).toLocaleString()}
                         </p>
                       </div>
                       <Progress value={100} className="h-2" />
@@ -285,7 +285,7 @@ export default function AdminPayments() {
                       <div className="flex items-center justify-between mb-2">
                         <p className="text-sm text-muted-foreground">Overdue Payments</p>
                         <p className="font-medium">
-                          KES {TENANTS_FINANCIAL_DATA.reduce((sum, tenant) => sum + tenant.balance, 0).toLocaleString()}
+                          ${TENANTS_FINANCIAL_DATA.reduce((sum, tenant) => sum + tenant.balance, 0).toLocaleString()}
                         </p>
                       </div>
                       <Progress value={20} className="h-2 bg-muted" />
@@ -296,7 +296,7 @@ export default function AdminPayments() {
                         <p className="font-medium">Collection Efficiency</p>
                         <div className="text-right">
                           <p className="font-bold">{collectionRate}%</p>
-                          <p className="text-xs text-muted-foreground">Target : 95%</p>
+                          <p className="text-xs text-muted-foreground">Target: 95%</p>
                         </div>
                       </div>
                     </div>
@@ -350,7 +350,7 @@ export default function AdminPayments() {
                         <TableCell>{tenant.unit}</TableCell>
                         <TableCell>
                           <div className="flex items-center gap-2">
-                            <span>KES {tenant.deposit}</span>
+                            <span>${tenant.deposit}</span>
                             <span className={`px-2 py-1 rounded-full text-xs ${
                               tenant.depositStatus === 'held' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'
                             }`}>
@@ -360,7 +360,7 @@ export default function AdminPayments() {
                         </TableCell>
                         <TableCell>
                           <span className={tenant.balance > 0 ? "text-red-600 font-medium" : "text-green-600 font-medium"}>
-                            KES {tenant.balance}
+                            ${tenant.balance}
                           </span>
                         </TableCell>
                         <TableCell>{tenant.lastPayment}</TableCell>
@@ -394,7 +394,7 @@ export default function AdminPayments() {
               <DialogContent className="max-w-4xl">
                 <DialogHeader>
                   <DialogTitle>Payment History - {selectedTenant?.name}</DialogTitle>
-                  <DialogDescription>Unit : {selectedTenant?.unit}</DialogDescription>
+                  <DialogDescription>Unit: {selectedTenant?.unit}</DialogDescription>
                 </DialogHeader>
                 
                 {selectedTenant && (

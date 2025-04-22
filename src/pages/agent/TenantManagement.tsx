@@ -43,7 +43,7 @@ export default function AgentTenantManagement() {
   const [tenants, setTenants] = useState<Tenant[]>([
     {
       id: 1,
-      name: "Mercy Mayra",
+      name: "John Doe",
       unit: "Apt 301",
       property: "Sunset Apartments",
       moveInDate: "2023-01-15",
@@ -55,7 +55,7 @@ export default function AgentTenantManagement() {
     },
     {
       id: 2,
-      name: "Tall Hawk",
+      name: "Jane Smith",
       unit: "Apt 205",
       property: "Urban Lofts",
       moveInDate: "2023-03-01",
@@ -79,7 +79,7 @@ export default function AgentTenantManagement() {
     },
     {
       id: 4,
-      name: "Emma Simbason",
+      name: "Emma Johnson",
       unit: "B2",
       property: "Urban Lofts",
       moveInDate: "2022-11-15",

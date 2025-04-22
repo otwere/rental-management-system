@@ -27,45 +27,45 @@ export default function AdminTenants() {
   const allTenants = [
     {
       id: "t1",
-      name: "Mercy Mayra",
+      name: "John Doe",
       unit: "Apt 301",
       moveInDate: "2023-01-15",
       leaseEnd: "2024-01-14",
       rentStatus: "current",
       lastPayment: "2024-03-01",
       rentAmount: 2500,
-      phoneNumber: "+254 700123-4567",
-      email: "Simba@example.com",
+      phoneNumber: "+1 (555) 123-4567",
+      email: "john@example.com",
       occupants: 2,
-      
+      pets: "1 cat",
     },
     {
       id: "t2",
-      name: "Tall Hawk",
+      name: "Jane Smith",
       unit: "Apt 205",
       moveInDate: "2023-03-01",
       leaseEnd: "2024-02-28",
       rentStatus: "late",
       lastPayment: "2024-02-01",
       rentAmount: 2200,
-      phoneNumber: "+254 700987-6543",
-      email: "tallhawk@example.com",
+      phoneNumber: "+1 (555) 987-6543",
+      email: "jane@example.com",
       occupants: 1,
-      
+      pets: "No pets",
     },
     {
       id: "t3",
-      name: "Robert Simbason",
+      name: "Robert Johnson",
       unit: "Apt 112",
       moveInDate: "2023-05-10",
       leaseEnd: "2024-05-09",
       rentStatus: "current",
       lastPayment: "2024-03-01",
       rentAmount: 2300,
-      phoneNumber: "+254 700456-7890",
+      phoneNumber: "+1 (555) 456-7890",
       email: "robert@example.com",
       occupants: 3,
-     
+      pets: "2 dogs",
     },
   ];
 
@@ -248,7 +248,7 @@ export default function AdminTenants() {
                     <TableCell className="font-medium">
                       <div>{tenant.name}</div>
                       <div className="text-sm text-muted-foreground">
-                        {tenant.occupants} occupants • {tenant.rentStatus}
+                        {tenant.occupants} occupants • {tenant.pets}
                       </div>
                     </TableCell>
                     <TableCell>

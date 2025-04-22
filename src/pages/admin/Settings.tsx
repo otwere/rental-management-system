@@ -36,7 +36,7 @@ export default function AdminSettings() {
                 <div className="grid gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="company-name">Company Name</Label>
-                    <Input id="company-name" placeholder="Rental  Portal" />
+                    <Input id="company-name" placeholder="Rental Portal" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="contact-email">Contact Email</Label>
@@ -44,7 +44,7 @@ export default function AdminSettings() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" type="tel" placeholder="+254 700000-0000" />
+                    <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" />
                   </div>
                 </div>
                 <Button>Save Changes</Button>

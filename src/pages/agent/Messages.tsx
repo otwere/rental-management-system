@@ -67,15 +67,15 @@ interface Message {
 const MOCK_CONTACTS: Contact[] = [
   {
     id: "contact-1",
-    name: "Simba Smith",
-    email: "Simba@example.com",
+    name: "John Smith",
+    email: "john@example.com",
     phone: "555-123-4567",
     type: "tenant",
     propertyUnit: "Sunset Apartments - Unit 101"
   },
   {
     id: "contact-2",
-    name: "Emma Simbason",
+    name: "Emma Johnson",
     email: "emma@example.com",
     phone: "555-987-6543",
     type: "tenant",
@@ -120,7 +120,7 @@ const MOCK_MESSAGES: Record<string, Message[]> = {
       id: "msg-2",
       contactId: "contact-1",
       type: MessageType.Outgoing,
-      content: "Thank you for letting us know, Simba. I'll send a maintenance request right away. Someone will contact you soon to schedule a repair.",
+      content: "Thank you for letting us know, John. I'll send a maintenance request right away. Someone will contact you soon to schedule a repair.",
       timestamp: new Date("2024-04-15T11:05:00"),
       isRead: true
     },

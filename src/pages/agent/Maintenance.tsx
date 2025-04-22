@@ -39,7 +39,7 @@ const MOCK_MAINTENANCE: MaintenanceRequest[] = [
     unit: "101",
     issue: "Leaking faucet in kitchen",
     description: "The kitchen faucet has been leaking for two days. Water is pooling underneath the sink.",
-    tenant: "Simba Smith",
+    tenant: "John Smith",
     priority: "medium",
     status: "pending",
     reportedDate: "2024-04-15",
@@ -50,7 +50,7 @@ const MOCK_MAINTENANCE: MaintenanceRequest[] = [
     unit: "B2",
     issue: "AC not cooling",
     description: "The air conditioning unit isn't cooling the apartment. Current indoor temperature is 85°F.",
-    tenant: "Emma Simbason",
+    tenant: "Emma Johnson",
     priority: "high",
     status: "in_progress",
     reportedDate: "2024-04-14",
@@ -684,7 +684,7 @@ export default function AgentMaintenance() {
                           <SelectContent>
                             <SelectItem value="Mike Technician">Mike Technician</SelectItem>
                             <SelectItem value="Sarah Electrician">Sarah Electrician</SelectItem>
-                            <SelectItem value="Simba Plumber">Simba Plumber</SelectItem>
+                            <SelectItem value="John Plumber">John Plumber</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>

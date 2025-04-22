@@ -25,7 +25,7 @@ const mockTransactions = [
     amount: 1500,
     paymentMethod: "Bank Transfer",
     status: "paid",
-    tenant: { name: "Mercy Mayra", unit: "A101" },
+    tenant: { name: "John Doe", unit: "A101" },
     type: "Rent Payment",
     balance: 0
   },
@@ -36,7 +36,7 @@ const mockTransactions = [
     amount: 1200,
     paymentMethod: "Credit Card",
     status: "pending",
-    tenant: { name: "Tall Hawk", unit: "B202" },
+    tenant: { name: "Jane Smith", unit: "B202" },
     type: "Deposit",
     balance: 0
   }
@@ -66,8 +66,8 @@ export default function AccountingPage() {
 
   // Mock tenants data
   const tenants = [
-    { id: "1", name: "Mercy Mayra", unit: "A101" },
-    { id: "2", name: "Tall Hawk", unit: "B202" }
+    { id: "1", name: "John Doe", unit: "A101" },
+    { id: "2", name: "Jane Smith", unit: "B202" }
   ];
 
   return (

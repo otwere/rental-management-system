@@ -1,11 +1,9 @@
-"use client"
-
-import type React from "react"
-
-import { Dialog, DialogContent, DialogTitle, DialogFooter } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { useState, useEffect } from "react"
+"use client";
+import type React from "react";
+import { Dialog, DialogContent, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useState, useEffect } from "react";
 import {
   Banknote,
   CreditCard,
@@ -454,7 +452,7 @@ export function TenantPaymentModal({ open, onClose, onPaymentSuccess }: Props) {
                     </label>
                     <div className="flex items-center text-xs text-slate-500 dark:text-slate-400">
                       <Calendar className="h-3 w-3 mr-1" />
-                      Current month: {CURRENT_MONTH}
+                      Current month : {CURRENT_MONTH}
                     </div>
                   </div>
 

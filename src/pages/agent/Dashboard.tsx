@@ -16,7 +16,7 @@ export default function AgentDashboard() {
   const maintenanceRequests = 1;
   
   const upcomingViewings = [
-    { id: 1, property: "Modern Downtown Apartment", client: "David Simbason", date: "Today, 2:00 PM" },
+    { id: 1, property: "Modern Downtown Apartment", client: "David Johnson", date: "Today, 2:00 PM" },
     { id: 2, property: "Spacious Family Home", client: "Sarah Williams", date: "Tomorrow, 10:00 AM" },
   ];
   
@@ -25,7 +25,7 @@ export default function AgentDashboard() {
       id: 1, 
       property: "Luxury Waterfront Condo", 
       issue: "Plumbing issue in bathroom", 
-      tenant: "Simba Tenant", 
+      tenant: "John Tenant", 
       status: "Pending",
       priority: "High",
       reported: "2 days ago"
